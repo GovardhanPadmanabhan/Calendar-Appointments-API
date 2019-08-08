@@ -1,0 +1,15 @@
+current directory: /Users/itn.govardhan.p/calreact/vendor/bundle/gems/bindex-0.8.1/ext/skiptrace
+/Users/itn.govardhan.p/.rvm/rubies/ruby-2.6.3/bin/ruby -I /Users/itn.govardhan.p/.rvm/rubies/ruby-2.6.3/lib/ruby/site_ruby/2.6.0 -r ./siteconf20190807-7313-1yacqe1.rb extconf.rb
+creating Makefile
+
+current directory: /Users/itn.govardhan.p/calreact/vendor/bundle/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /Users/itn.govardhan.p/calreact/vendor/bundle/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+
+current directory: /Users/itn.govardhan.p/calreact/vendor/bundle/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 cruby.bundle ./.gem.20190807-7313-7we0nc/skiptrace/internal
