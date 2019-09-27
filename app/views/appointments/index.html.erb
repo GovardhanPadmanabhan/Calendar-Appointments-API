@@ -1,33 +1,20 @@
-<h1>React Calendar</h1>
-<br />
-<h2>Appointments</h2>
-<br />
+<%
+=begin%>
+ <% if user_signed_in? %>
+  <div>
+    <%= current_user.email %>
+    <div style="inline-block; float:right;">
+      <%= link_to('Sign out', destroy_user_session_path, method: :delete) %>
+    </div>
+    <br /><br /><br />
+  </div>
+<% end %> 
+<%
+=end%>
+
 
 <%= content_tag :div,
   id: "appointments_data",
   data: @appointments.to_json do %>
-    <%= javascript_pack_tag 'Appointments' %>
-<% end %>
-
-
-<%
-=begin%>
- <%= simple_form_for @appointment, remote: true do |f| %>
-    <%= f.label :title, 'Title' %>
-    <br />
-    <%= f.input :title,
-                label: false,
-                type: 'text',
-                include_blank: false,
-                prompt: '' %>
-    <br />
-    <%= f.label :'Date and Time' %>
-    <br />
-    <%= f.input_field :appt_time,
-                      required: true %>
-    <br /><br /><br />
-    <%= f.submit 'Make Appointment' %>
-    <br /><br />
-<% end %>
-<%
-=end%>
+    <%= javascript_pack_tag 'AppRouter' %>
+<% end %>  

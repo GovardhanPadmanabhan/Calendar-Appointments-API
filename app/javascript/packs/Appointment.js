@@ -1,12 +1,45 @@
-import React from 'react';
+import React, { Component } from 'react';
 import moment from 'moment';
+import { Link } from 'react-router-dom';    
+import axios from 'axios';
 
-const Appointment = ({appointment}) => 
-    <div>
-        <br />
-        <h4>{appointment.title}</h4>
-        <p>{moment(appointment.appt_time).format('DD MMM YYYY, h:mm:ss a')}</p>
-    </div>
+class Appointment extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            appointment: this.props.appointment
+        }
+    }
 
+    static defaultProps = {
+        appointment: {}
+    }
 
+    componentDidMount() {
+        if(this.props.match) {
+            axios.get(`/appointments/${this.props.match.params.id}`, { responseType: 'json' })
+            .then(response => {
+                this.setState({appointment: response.data})
+            })
+        }
+    }
+
+    render() {
+        return (
+            <div className='appointment'>
+                <br />
+                <Link to={`/appointments/${this.state.appointment.id}`}>
+                    <h4>{this.state.appointment.title}</h4>
+                </Link>
+                <p>{moment(this.state.appointment.appt_time).format('DD MMM YYYY, h:mm a')}</p>
+                <br />
+                <Link to={`/appointments/${this.state.appointment.id}/edit`}>
+                    Edit
+                </Link>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <Link to="/" onClick={() => { if (window.confirm('Are you sure you want to delete this appointment?')){ this.props.handleDelete(this.state.appointment.id) } } }>Delete</Link>
+            </div>
+        )
+    }
+}
 export default Appointment;

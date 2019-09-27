@@ -134,11 +134,11 @@ const nodeEnv = devBuild ? 'development' : 'production';
 
 module.exports = {
   entry: [
-    './app/bundles/HelloWorld/startup/registration',
+    './app/bundles/Appointments/startup/registration',
   ],
 
   output: {
-    filename: 'hello-world-bundle.js',
+    filename: 'appointments-bundle.js',
     path: '../app/assets/webpack'
   },
 

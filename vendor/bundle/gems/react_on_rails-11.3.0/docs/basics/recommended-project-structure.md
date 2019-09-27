@@ -8,10 +8,10 @@ The React on Rails generator uses the standard `rails/webpacker` convention of t
 app/javascript:
   ├── bundles:
   │   # Logical groups of files that can be used for code splitting
-  │   └── hello-world-bundle.js
+  │   └── appointments-bundle.js
   ├── packs:
   │   # only webpack entry files here
-  │   └── hello-world-bundle.js
+  │   └── appointments-bundle.js
 ```
 
 The problems with this structure and using rails/webpacker to configure Webpack for you:
