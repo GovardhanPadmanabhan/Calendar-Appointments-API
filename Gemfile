@@ -77,7 +77,7 @@ gem 'react-rails', '~> 2.6'
 
 gem 'devise', '~> 4.6', '>= 4.6.2'
 
-gem 'rack-cors', '~> 1.0', '>= 1.0.3'
+gem 'rack-cors', '~> 1.0'
 
 gem 'devise_token_auth', '~> 1.1'
 
